@@ -1,254 +1,257 @@
 import {
+  ArrowDown,
   ArrowRight,
+  ArrowUpRight,
   BookOpen,
+  Check,
   CheckCircle2,
   Clock3,
   Code2,
   FileSpreadsheet,
   FileText,
   GraduationCap,
+  Layers3,
   Mail,
-  Menu,
   Presentation,
   ShieldCheck,
   Sparkles,
   WandSparkles,
+  Zap,
 } from "lucide-react";
 
 const services = [
   {
+    number: "01",
     icon: BookOpen,
-    title: "College Assignments",
+    title: "College assignments",
     description:
-      "Typed and handwritten-style assignments, solved questions and well-organised PDF submissions.",
-    tags: ["Typed work", "Solved questions", "PDF"],
+      "Thoughtfully organised typed work, handwritten-style formatting, practice questions and clear PDF documents.",
+    tags: ["Typed work", "Formatting", "Solved practice"],
   },
   {
+    number: "02",
     icon: FileText,
-    title: "PDF Notes & Study Material",
+    title: "PDF notes & study material",
     description:
-      "Subject-wise notes, short notes and solved past papers to support your revision and learning.",
-    tags: ["Subject notes", "Past papers", "Short notes"],
+      "Subject-wise notes, concise revision material and solved past-paper resources to support your learning.",
+    tags: ["Subject notes", "Short notes", "Past papers"],
   },
   {
+    number: "03",
     icon: Code2,
-    title: "Coding Assistance",
+    title: "Coding assistance",
     description:
-      "Guidance and support for basic Python, HTML, CSS, JavaScript and C++ projects and assignments.",
+      "Guidance with beginner-level Python, HTML, CSS, JavaScript and C++ projects, concepts and practical tasks.",
     tags: ["Python", "Web basics", "C++"],
   },
   {
+    number: "04",
     icon: FileSpreadsheet,
-    title: "Microsoft Office Documents",
+    title: "Microsoft Office documents",
     description:
-      "Cleanly formatted Word documents, organised Excel sheets and professional PowerPoint files.",
+      "Polished Word documents, structured Excel sheets and clean PowerPoint presentations.",
     tags: ["MS Word", "MS Excel", "MS PowerPoint"],
   },
   {
+    number: "05",
     icon: WandSparkles,
-    title: "CV & Resume Creation",
+    title: "CV & resume creation",
     description:
-      "Professional, ATS-conscious CVs for job applications, internships and early-career opportunities.",
-    tags: ["Fresh graduates", "Internships", "ATS-conscious"],
+      "Professional, ATS-conscious CVs for fresh graduates, internships and experienced applicants.",
+    tags: ["Freshers", "Internships", "ATS-conscious"],
   },
   {
+    number: "06",
     icon: Presentation,
-    title: "Project Reports & Presentations",
+    title: "Project reports & presentations",
     description:
-      "Structured project reports, internship reports, practical files and polished presentation slides.",
+      "Well-structured project and internship reports, practical files and modern slides for class or viva.",
     tags: ["Project reports", "Practical files", "Viva slides"],
   },
 ];
 
-const steps = [
+const process = [
   {
     number: "01",
-    title: "Tell us what you need",
-    text: "Send your service request using the enquiry form. Include your topic, requirements and deadline.",
+    title: "Share your requirements",
+    description:
+      "Choose a service and tell us about the topic, instructions and deadline using the enquiry form.",
   },
   {
     number: "02",
-    title: "Receive a free quotation",
-    text: "We review the details and reply by email with the price and estimated delivery time.",
+    title: "Get a free quotation",
+    description:
+      "We review your request and email you with the price, timeline and any questions before starting.",
   },
   {
     number: "03",
-    title: "Get your completed work",
-    text: "After confirming the details, your finished documents are delivered by email.",
+    title: "Receive your work",
+    description:
+      "Once the details are agreed, your completed documents are sent to you by email.",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#11142B]/95 text-white backdrop-blur-xl">
+    <main className="site-shell overflow-hidden">
+      <header className="site-header">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#home" className="flex items-center gap-3" aria-label="Master Mind Developer home">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-400 to-indigo-600 text-sm font-black tracking-tight shadow-lg shadow-violet-950/30">
-              MMD
-            </span>
-            <span className="leading-tight">
-              <span className="block text-sm font-bold tracking-wide">MASTER MIND</span>
-              <span className="block text-[10px] font-semibold tracking-[0.25em] text-violet-200">
-                DEVELOPER
-              </span>
+          <a href="#home" className="brand-lockup" aria-label="Master Mind Developer home">
+            <span className="brand-mark">M<span>M</span>D</span>
+            <span className="brand-name">
+              <strong>MASTER MIND</strong>
+              <small>DEVELOPER</small>
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
-            <a className="transition hover:text-white" href="#about">About</a>
-            <a className="transition hover:text-white" href="#services">Services</a>
-            <a className="transition hover:text-white" href="#process">How it works</a>
-            <a className="transition hover:text-white" href="#contact">Contact</a>
+          <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+            <a href="#about" className="nav-link">About</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#process" className="nav-link">How it works</a>
+            <a href="#contact" className="nav-link">Contact</a>
           </nav>
 
-          <a
-            href="#contact"
-            className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#171A3A] transition hover:bg-violet-100 sm:inline-flex"
-          >
-            Order Now <ArrowRight size={16} />
+          <a href="#contact" className="button button-small button-primary hidden sm:inline-flex">
+            Start an enquiry <ArrowUpRight size={16} />
           </a>
-          <a href="#contact" className="rounded-lg border border-white/20 p-2 text-white md:hidden" aria-label="Go to contact section">
-            <Menu size={20} />
+          <a href="#contact" className="mobile-cta sm:hidden" aria-label="Go to enquiry form">
+            <Mail size={18} />
           </a>
         </div>
       </header>
 
-      <section id="home" className="relative isolate bg-[#11142B] text-white">
-        <div className="hero-grid absolute inset-0 -z-10 opacity-40" />
-        <div className="absolute -right-40 top-10 -z-10 h-96 w-96 rounded-full bg-violet-600/30 blur-[110px]" />
-        <div className="absolute -left-40 bottom-0 -z-10 h-80 w-80 rounded-full bg-indigo-500/20 blur-[100px]" />
+      <section id="home" className="hero-section relative isolate">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-glow hero-glow-one" aria-hidden="true" />
+        <div className="hero-glow hero-glow-two" aria-hidden="true" />
+        <div className="hero-noise" aria-hidden="true" />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
-          <div>
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-violet-300/10 px-4 py-2 text-xs font-semibold tracking-wide text-violet-100">
-              <Sparkles size={14} /> ACADEMIC & PROFESSIONAL SUPPORT
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-5 pb-24 pt-20 sm:px-8 sm:pb-28 sm:pt-28 lg:grid-cols-[1.08fr_.92fr] lg:gap-10 lg:pt-32">
+          <div className="hero-copy">
+            <div className="eyebrow-pill animate-rise">
+              <span className="live-dot" />
+              <Sparkles size={14} />
+              <span>ACADEMIC & PROFESSIONAL SUPPORT</span>
             </div>
-            <h1 className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
-              Your ideas deserve
-              <span className="block bg-gradient-to-r from-violet-300 to-indigo-200 bg-clip-text text-transparent">
-                clear, quality work.
-              </span>
+
+            <h1 className="hero-title animate-rise delay-100">
+              Make your next
+              <span className="hero-title-gradient">move count.</span>
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-              Reliable academic and document services for students, job seekers
-              and professionals. Thoughtfully prepared, neatly formatted and
-              delivered with care.
+            <p className="hero-description animate-rise delay-200">
+              Clear documents. Confident presentations. Practical learning support.
+              Master Mind Developer helps students and professionals turn busy work
+              into work they can feel good about.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-violet-950/30 transition hover:-translate-y-0.5 hover:bg-violet-400">
-                Order Now <ArrowRight size={17} />
+
+            <div className="mt-9 flex flex-col gap-3 animate-rise delay-300 sm:flex-row">
+              <a href="#contact" className="button button-primary button-large">
+                Order now <ArrowRight size={18} />
               </a>
-              <a href="#services" className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10">
-                Explore Services
+              <a href="#services" className="button button-ghost button-large">
+                Explore services <ArrowDown size={17} />
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium text-slate-300">
-              <span className="inline-flex items-center gap-2"><ShieldCheck size={15} className="text-violet-300" /> Privacy focused</span>
-              <span className="inline-flex items-center gap-2"><Clock3 size={15} className="text-violet-300" /> 24–72 hour typical delivery</span>
-              <span className="inline-flex items-center gap-2"><CheckCircle2 size={15} className="text-violet-300" /> One free revision</span>
+
+            <div className="hero-assurances animate-rise delay-400">
+              <span><ShieldCheck size={16} /> Privacy-minded</span>
+              <i />
+              <span><Clock3 size={16} /> 24–72 hour typical delivery</span>
+              <i />
+              <span><CheckCircle2 size={16} /> 1 free revision</span>
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-violet-500/30 to-indigo-500/10 blur-2xl" />
-            <div className="relative rounded-[2rem] border border-white/15 bg-white/[0.07] p-5 shadow-2xl backdrop-blur-xl sm:p-7">
-              <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200">Master Mind Developer</p>
-                  <p className="mt-1 text-lg font-bold">Support that fits your goals</p>
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-400 to-indigo-600 text-sm font-black">MMD</div>
+          <div className="hero-visual animate-visual" aria-label="Master Mind Developer digital services illustration">
+            <div className="visual-orbit orbit-one" />
+            <div className="visual-orbit orbit-two" />
+            <div className="visual-orbit orbit-three" />
+            <div className="orbit-node node-one" />
+            <div className="orbit-node node-two" />
+            <div className="orbit-node node-three" />
+
+            <div className="visual-core">
+              <div className="core-topline">
+                <span className="core-indicator"><span /> MMD WORKSPACE</span>
+                <span className="core-menu"><i /><i /><i /></span>
               </div>
-              <div className="space-y-3 py-6">
-                {[
-                  ["01", "Academic assignments", "Organised, clear documents"],
-                  ["02", "CVs & professional docs", "A polished first impression"],
-                  ["03", "Coding & presentations", "Practical project support"],
-                ].map(([n, title, desc]) => (
-                  <div key={n} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                    <span className="text-sm font-bold text-violet-300">{n}</span>
-                    <div>
-                      <p className="text-sm font-semibold text-white">{title}</p>
-                      <p className="mt-1 text-xs text-slate-400">{desc}</p>
-                    </div>
-                    <ArrowRight className="ml-auto text-slate-500" size={16} />
-                  </div>
-                ))}
-              </div>
-              <div className="rounded-2xl bg-gradient-to-r from-violet-500/20 to-indigo-500/20 p-4">
-                <p className="text-sm font-semibold">Need something specific?</p>
-                <p className="mt-1 text-xs leading-5 text-slate-300">Share your requirements and get a free, no-obligation quotation.</p>
-              </div>
+              <div className="core-monogram">MMD</div>
+              <div className="core-caption">THINK · CREATE · PRESENT</div>
+              <div className="core-spectrum"><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /></div>
+              <div className="core-bottomline"><span>YOUR IDEAS, BETTER PRESENTED</span><Zap size={14} /></div>
+            </div>
+
+            <div className="float-card float-card-top">
+              <span className="float-icon"><FileText size={17} /></span>
+              <span><b>Documents</b><small>Clean & organised</small></span>
+              <Check size={15} className="float-check" />
+            </div>
+            <div className="float-card float-card-bottom">
+              <span className="float-icon float-icon-blue"><Code2 size={17} /></span>
+              <span><b>Project support</b><small>Built with care</small></span>
+              <ArrowUpRight size={15} className="float-check" />
+            </div>
+            <div className="visual-label label-left">IDEAS INTO IMPACT</div>
+            <div className="visual-label label-right">EST. FOR YOUR NEXT STEP</div>
+          </div>
+        </div>
+
+        <div className="hero-bottom mx-auto max-w-7xl px-5 sm:px-8">
+          <span>BUILT AROUND YOUR GOALS</span>
+          <div className="hero-bottom-line" />
+          <a href="#about" aria-label="Scroll to about section"><ArrowDown size={17} /></a>
+        </div>
+      </section>
+
+      <section id="about" className="section section-about">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:gap-24">
+          <div className="reveal-block">
+            <p className="section-kicker"><span>01</span> / THE MMD APPROACH</p>
+            <h2 className="section-title">Small details.<br /><span className="text-gradient">A stronger result.</span></h2>
+          </div>
+          <div className="about-content reveal-block delay-100">
+            <p className="about-lead">
+              <strong>Master Mind Developer</strong> provides academic and professional
+              document services for students, job seekers and working professionals.
+            </p>
+            <p>
+              We started with a simple idea: make it easier to manage difficult topics,
+              tight deadlines and document formatting. From study resources and coding
+              guidance to CVs and office documents, every request receives careful
+              attention and clear communication.
+            </p>
+            <div className="about-points">
+              <div><span className="point-icon"><ShieldCheck size={19} /></span><span><b>Your privacy comes first</b><small>Enquiries are handled discreetly and respectfully.</small></span></div>
+              <div><span className="point-icon"><GraduationCap size={19} /></span><span><b>Student-friendly approach</b><small>Affordable quotations tailored to each request.</small></span></div>
+              <div><span className="point-icon"><Sparkles size={19} /></span><span><b>Care in every detail</b><small>Neat formatting, thoughtful presentation and clear delivery.</small></span></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="bg-white py-20 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-          <div>
-            <p className="section-kicker">GET TO KNOW US</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Practical support.<br /><span className="text-violet">Thoughtful results.</span>
-            </h2>
-          </div>
-          <div className="space-y-5 text-[15px] leading-8 text-slate-600">
-            <p>
-              <strong className="text-ink">Master Mind Developer</strong> provides
-              academic and professional document services for students, job
-              seekers and working professionals. From assignments and study
-              notes to coding guidance, CVs and Microsoft Office documents, we
-              focus on making every deliverable clear, organised and carefully
-              formatted.
-            </p>
-            <p>
-              The idea began with a simple goal: to support students who need
-              help understanding requirements, managing deadlines and
-              presenting their work neatly. We aim to make dependable support
-              accessible with affordable, student-friendly pricing.
-            </p>
-            <div className="grid gap-4 pt-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-violet-100 bg-violet-50/70 p-5">
-                <ShieldCheck className="text-violet" size={22} />
-                <h3 className="mt-3 font-bold text-ink">Privacy matters</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-600">Your enquiry and shared information are handled with care.</p>
-              </div>
-              <div className="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-5">
-                <GraduationCap className="text-indigo-600" size={22} />
-                <h3 className="mt-3 font-bold text-ink">Student friendly</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-600">Clear communication and affordable quotations for your needs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="bg-[#F7F7FC] py-20 sm:py-24">
+      <section id="services" className="section section-services">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="section-kicker">WHAT WE CAN HELP WITH</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Services designed around your needs</h2>
-            <p className="mt-4 leading-7 text-slate-600">Choose a service and tell us what you need. Every request is reviewed individually, with a free quotation before work begins.</p>
+          <div className="section-heading reveal-block">
+            <p className="section-kicker"><span>02</span> / WHAT WE DO</p>
+            <h2 className="section-title">Your task. <span className="text-gradient">Our focus.</span></h2>
+            <p>Explore practical services for college, career and everyday document needs.</p>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
+
+          <div className="services-grid">
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <article key={service.title} className="group rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-soft">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 text-violet transition group-hover:bg-violet group-hover:text-white">
-                    <Icon size={23} />
+                <article key={service.number} className={`service-card reveal-block delay-${(index % 3) * 100}`}>
+                  <div className="service-card-top">
+                    <span className="service-icon"><Icon size={22} strokeWidth={1.8} /></span>
+                    <span className="service-number">{service.number}</span>
                   </div>
-                  <h3 className="mt-5 text-lg font-bold text-ink">{service.title}</h3>
-                  <p className="mt-3 min-h-[76px] text-sm leading-7 text-slate-600">{service.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {service.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600">{tag}</span>
-                    ))}
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <div className="service-tags">
+                    {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
                   </div>
-                  <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-violet hover:text-indigo-700">
-                    Enquire now <ArrowRight size={15} />
-                  </a>
+                  <a href="#contact" className="service-link">Enquire about this <ArrowUpRight size={16} /></a>
                 </article>
               );
             })}
@@ -256,83 +259,78 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="bg-white py-20 sm:py-24">
+      <section id="process" className="section section-process">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="section-kicker">SIMPLE & STRAIGHTFORWARD</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">How it works</h2>
-            <p className="mt-4 text-slate-600">Getting started takes just a few simple steps.</p>
+          <div className="section-heading reveal-block">
+            <p className="section-kicker"><span>03</span> / THE PROCESS</p>
+            <h2 className="section-title">Simple from <span className="text-gradient">start to finish.</span></h2>
+            <p>No complicated steps. Just tell us what you need and we will guide you from there.</p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {steps.map((step) => (
-              <div key={step.number} className="rounded-3xl border border-slate-200 bg-white p-7">
-                <span className="text-sm font-black tracking-widest text-violet">{step.number}</span>
-                <h3 className="mt-5 text-xl font-bold text-ink">{step.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{step.text}</p>
+          <div className="process-grid">
+            {process.map((item, index) => (
+              <div key={item.number} className={`process-card reveal-block delay-${index * 100}`}>
+                <div className="process-number">{item.number}</div>
+                <div className="process-connector"><span /></div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#171A3A] py-16 text-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 md:grid-cols-3">
-          <div className="flex gap-4">
-            <Clock3 className="mt-1 shrink-0 text-violet-300" size={24} />
-            <div><h3 className="font-bold">Timely delivery</h3><p className="mt-2 text-sm leading-6 text-slate-300">Typical turnaround is 24–72 hours, depending on the task. Urgent requests can be discussed.</p></div>
-          </div>
-          <div className="flex gap-4">
-            <CheckCircle2 className="mt-1 shrink-0 text-violet-300" size={24} />
-            <div><h3 className="font-bold">One free revision</h3><p className="mt-2 text-sm leading-6 text-slate-300">One revision is included when reasonable changes are needed to meet the agreed requirements.</p></div>
-          </div>
-          <div className="flex gap-4">
-            <ShieldCheck className="mt-1 shrink-0 text-violet-300" size={24} />
-            <div><h3 className="font-bold">Respectful privacy</h3><p className="mt-2 text-sm leading-6 text-slate-300">Customer details and documents are treated as private and are not displayed publicly.</p></div>
-          </div>
+      <section className="service-promise">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-3">
+          <div className="promise-item"><Clock3 size={22} /><div><b>Timely delivery</b><p>Typical turnaround is 24–72 hours. Urgent requests can be discussed.</p></div></div>
+          <div className="promise-item"><CheckCircle2 size={22} /><div><b>One free revision</b><p>One reasonable revision is included when changes are needed.</p></div></div>
+          <div className="promise-item"><ShieldCheck size={22} /><div><b>Privacy-minded service</b><p>Your enquiry details are treated with care and discretion.</p></div></div>
         </div>
       </section>
 
-      <section id="contact" className="bg-[#F7F7FC] py-20 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <div>
-            <p className="section-kicker">LET'S GET STARTED</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Tell us what you need.</h2>
-            <p className="mt-5 max-w-md leading-8 text-slate-600">
-              Send a few details about your request. We will review your enquiry
-              and reply by email with the next steps and a free quotation.
-            </p>
-            <div className="mt-8 rounded-3xl border border-violet-100 bg-white p-6">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet"><Mail size={21} /></div>
-              <p className="mt-4 text-sm font-semibold text-slate-500">BUSINESS EMAIL</p>
-              <a href="mailto:masterminddeveloper12@gmail.com" className="mt-1 inline-block break-all text-base font-bold text-ink hover:text-violet">
-                masterminddeveloper12@gmail.com
-              </a>
-              <p className="mt-4 text-xs leading-6 text-slate-500">Working hours: 10:00 AM – 10:00 PM, seven days a week (Pakistan time).</p>
+      <section id="contact" className="section section-contact">
+        <div className="contact-backdrop" aria-hidden="true" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:gap-20">
+          <div className="contact-copy reveal-block">
+            <p className="section-kicker"><span>04</span> / START A CONVERSATION</p>
+            <h2 className="section-title">Have a task<br /><span className="text-gradient">in mind?</span></h2>
+            <p className="contact-intro">Share a few details about what you need. We will review your request and respond by email with a free quotation.</p>
+            <div className="contact-email-card">
+              <span className="contact-email-icon"><Mail size={20} /></span>
+              <span><small>BUSINESS EMAIL</small><a href="mailto:masterminddeveloper12@gmail.com">masterminddeveloper12@gmail.com</a></span>
+              <ArrowUpRight size={17} className="email-arrow" />
             </div>
+            <div className="working-hours"><span className="live-dot" /> Working hours: 10:00 AM – 10:00 PM, 7 days a week <small>(Pakistan time)</small></div>
           </div>
 
           <form
-            action="https://formsubmit.co/masterminddeveloper12@gmail.com"
+            action="https://api.web3forms.com/submit"
             method="POST"
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8"
+            className="contact-form reveal-block delay-100"
           >
-            <input type="hidden" name="_subject" value="New enquiry — Master Mind Developer" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label htmlFor="name" className="form-label">Your name</label>
-                <input id="name" name="name" required maxLength={100} placeholder="Enter your name" className="form-input" />
+            <input type="hidden" name="access_key" value="a25d96fe-2312-4e0b-a199-030836e17b10" />
+            <input type="hidden" name="subject" value="New Enquiry - Master Mind Developer" />
+            <input type="hidden" name="from_name" value="Master Mind Developer Website" />
+            <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
+
+            <div className="form-heading">
+              <div><span className="form-overline">FREE QUOTATION</span><h3>Send an enquiry</h3></div>
+              <span className="form-badge"><Layers3 size={14} /> MMD FORM</span>
+            </div>
+
+            <div className="form-row">
+              <div className="form-field">
+                <label htmlFor="name">Your name</label>
+                <input id="name" name="name" required maxLength={100} placeholder="Enter your name" />
               </div>
-              <div>
-                <label htmlFor="email" className="form-label">Email address</label>
-                <input id="email" name="email" type="email" required maxLength={254} placeholder="you@example.com" className="form-input" />
+              <div className="form-field">
+                <label htmlFor="email">Email address</label>
+                <input id="email" name="email" type="email" required maxLength={254} placeholder="you@example.com" />
               </div>
             </div>
-            <div className="mt-5">
-              <label htmlFor="service" className="form-label">What service do you need?</label>
-              <select id="service" name="service" required defaultValue="" className="form-input">
+
+            <div className="form-field">
+              <label htmlFor="service">What service do you need?</label>
+              <select id="service" name="service" required defaultValue="">
                 <option value="" disabled>Select a service</option>
                 <option>College Assignments</option>
                 <option>PDF Notes & Study Material</option>
@@ -344,9 +342,10 @@ export default function Home() {
                 <option>Other / Not sure</option>
               </select>
             </div>
-            <div className="mt-5">
-              <label htmlFor="deadline" className="form-label">Preferred deadline</label>
-              <select id="deadline" name="preferred_deadline" defaultValue="Flexible / please discuss" className="form-input">
+
+            <div className="form-field">
+              <label htmlFor="deadline">Preferred deadline</label>
+              <select id="deadline" name="preferred_deadline" defaultValue="Flexible / please discuss">
                 <option>Flexible / please discuss</option>
                 <option>Within 24 hours (urgent)</option>
                 <option>Within 2–3 days</option>
@@ -354,30 +353,29 @@ export default function Home() {
                 <option>More than a week</option>
               </select>
             </div>
-            <div className="mt-5">
-              <label htmlFor="details" className="form-label">Tell us about your requirements</label>
-              <textarea id="details" name="requirements" required minLength={10} maxLength={4000} rows={5} placeholder="Share the topic, instructions, page or slide count, and any important details..." className="form-input resize-y" />
+
+            <div className="form-field">
+              <label htmlFor="details">Tell us about your requirements</label>
+              <textarea id="details" name="requirements" required minLength={10} maxLength={4000} rows={5} placeholder="Topic, instructions, page or slide count, and any important details..." />
             </div>
-            <p className="mt-4 text-xs leading-5 text-slate-500">Please do not include passwords, identity documents or other highly sensitive information in this enquiry form. Do not submit confidential files here.</p>
-            <button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 px-6 py-4 text-sm font-bold text-white transition hover:bg-violet-700 focus:outline-none focus:ring-4 focus:ring-violet-200">
-              Send Enquiry <ArrowRight size={17} />
-            </button>
-            <p className="mt-4 text-center text-xs text-slate-500">No prices displayed · Free quotation · Email communication only</p>
+
+            <p className="form-privacy">Please do not include passwords, identity documents or highly sensitive information. This enquiry form does not accept file attachments.</p>
+            <button type="submit" className="button button-primary button-submit">Send enquiry <ArrowRight size={18} /></button>
+            <p className="form-footnote"><ShieldCheck size={13} /> Email communication only · No public phone number</p>
           </form>
         </div>
       </section>
 
-      <footer className="bg-[#11142B] py-9 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-5 text-center sm:px-8 md:flex-row md:text-left">
-          <a href="#home" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-400 to-indigo-600 text-xs font-black">MMD</span>
-            <span className="text-left"><span className="block text-sm font-bold tracking-wide">MASTER MIND DEVELOPER</span><span className="mt-1 block text-[10px] text-slate-400">Academic & professional services</span></span>
+      <footer className="site-footer">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-8 text-center sm:px-8 md:flex-row md:text-left">
+          <a href="#home" className="brand-lockup" aria-label="Master Mind Developer home">
+            <span className="brand-mark brand-mark-small">M<span>M</span>D</span>
+            <span className="brand-name"><strong>MASTER MIND</strong><small>DEVELOPER</small></span>
           </a>
-          <p className="text-xs text-slate-400">© {new Date().getFullYear()} Master Mind Developer. All rights reserved.</p>
-          <a href="mailto:masterminddeveloper12@gmail.com" className="text-xs font-semibold text-violet-200 hover:text-white">Contact by email</a>
+          <p>© {new Date().getFullYear()} Master Mind Developer. All rights reserved.</p>
+          <a href="mailto:masterminddeveloper12@gmail.com" className="footer-email">Get in touch <ArrowUpRight size={14} /></a>
         </div>
       </footer>
-      
     </main>
-  ); 
+  );
 }
